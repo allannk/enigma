@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-git clone https://github.com/opencv/opencv.git /usr/src
-git clone https://github.com/opencv/opencv_contrib.git /usr/src
+git clone https://github.com/opencv/opencv.git /usr/src/opencv
+git clone https://github.com/opencv/opencv_contrib.git /usr/src/opencv_contrib
 
 mkdir /usr/src/opencv/build
 cd /usr/src/opencv/build
