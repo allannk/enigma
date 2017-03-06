@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-sudo chown $USER /srv -r
-sudo chgrp $USER /srv -r
+sudo chown /srv $USER -r
+sudo chgrp /srv $USER -r
 
 mkdir /srv/projects
 
