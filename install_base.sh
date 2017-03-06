@@ -10,7 +10,7 @@ sudo mkdir -p /mnt/hdd
 sudo mkdir -p /mnt/usb
 
 # Install basic packages
-sudo pacman --noconfirm --needed -S cmake gcc5 bash-completion eigen cuda yasm ladspa hardening-wrapper libfdk-aac nvidia-utils opencl-nvidia libglvnd boost glfw-x11 glm enca libcaca python python-numpy gimp evince vlc networkmanager qt4 rapidxml rapidjson-git netbeans
+sudo pacman --noconfirm --needed -S cmake gcc5 bash-completion eigen cuda yasm ladspa hardening-wrapper libfdk-aac nvidia-utils opencl-nvidia libglvnd boost glfw-x11 glm enca libcaca python python-numpy gimp evince vlc networkmanager qt4 netbeans
 
 # Remove unused packages part of KDE (required for removing protobuf later...)
 sudo pacman --noconfirm -R qt5-webengine akonadi-contacts akonadi-calendar calendarsupport akonadiconsole akonadi-calendar-tools eventviews incidenceeditor korganizer libkdepim kdepim-addons kdepim-runtime kgpg knotes kmail kalarm kaddressbook mailimporter pimcommon
@@ -20,7 +20,7 @@ pim-data-exporter kdepim-apps-libs mailcommon pim-storage-service-manager mbox-i
 sudo pacman --noconfirm --needed -U yaourt-1.8.1-1-any.pkg.tar.xz package-query-1.8-2-x86_64.pkg.tar.xz
 
 # Install ffmpeg-git
-sudo pacman --noconfirm -U ffmpeg-git-3.3.r83754.gef86488696-1-x86_64.pkg.tar.xz
+sudo pacman --noconfirm --needed -U ffmpeg-git-3.3.r83754.gef86488696-1-x86_64.pkg.tar.xz
 # Alternative: pacman -S ffmpeg-git
 
 # Install bazel and post-remove protobuf (makedepend)
@@ -31,11 +31,24 @@ sudo pacman --noconfirm -R protobuf
 yaourt --noconfirm --needed -S cudnn
 
 # Compile & Install RapidXML and RapidJSON
-# install_rapidjson
-# install_rapidxml
+yaourt --noconfirm --needed rapidxml rapidjson-git
 
 # Compile & Install OpenCV
 #install_opencv
 
 # Compile and Install TensorFlow
-#install_tensorflow
+#install_tensorflow_r12
+
+# Install Sciter
+sudo git clone https://github.com/c-smile/sciter-sdk /usr/src/sciter
+cd /usr/src/sciter
+sudo git reset --hard 6e50d7795c8bcd305ea2630b7358deed9f10bc0e
+sudo mkdir -p /usr/include/sciter
+sudo cp -r sciter-sdk/include/. /usr/include/sciter/
+sudo cp sciter-sdk/bin.gtk/libsciter-gtk-64.so /usr/lib/
+
+# Clone Pipeline to disk
+git clone https://github.com/recoord/egon.git /srv/projects/egon
+ln -s /srv/projects/egon $HOME/egon
+
+# Mount NFS drive
