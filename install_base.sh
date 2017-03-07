@@ -74,6 +74,8 @@ sudo pacman --noconfirm -R protobuf
 # ----------------------------
 #    Clone Pipeline to Disk
 # ----------------------------
-git clone https://github.com/recoord/egon.git /srv/projects/egon
-ln -s /srv/projects/egon $HOME/egon
+if [ ! -d /srv/projects/egon ]; then
+	git clone https://github.com/recoord/egon.git /srv/projects/egon
+	ln -s /srv/projects/egon $HOME/egon
+fi
 
