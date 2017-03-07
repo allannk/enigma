@@ -22,7 +22,7 @@ sudo mkdir -p /mnt/usb
 # Mount HDD and NFS drive
 sudo mkdir -p /mnt/data
 sudo mkdir -p /mnt/video
-if grep -e sportcaster /etc/fstab >/dev/null; then
+if grep -e "192.168.0.6" /etc/fstab >/dev/null; then
 	echo -e "Dendron Mount Point already specified in /etc/fstab. If broken, remove these lines first!\n"
 	exit 1
 else
