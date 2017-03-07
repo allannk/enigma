@@ -3,8 +3,8 @@
 # ----------------------------
 # Install/Remove Base Packages
 # ----------------------------
-sudo pacman --noconfirm --needed -S cmake gcc5 bash-completion eigen cuda yasm ladspa hardening-wrapper libfdk-aac nvidia-utils opencl-nvidia libglvnd boost glfw-x11 glm enca libcaca python python-numpy gimp evince vlc networkmanager qt4 netbeans atom
-sudo pacman --noconfirm -R qt5-webengine akonadi-contacts akonadi-calendar calendarsupport akonadiconsole akonadi-calendar-tools eventviews incidenceeditor korganizer libkdepim kdepim-addons kdepim-runtime kgpg knotes kmail kalarm kaddressbook mailimporter pimcommon nfs-utils pim-data-exporter kdepim-apps-libs mailcommon pim-storage-service-manager mbox-importer messagelib libgravatar libksieve kontact pim-sieve-editor blogilo akonadi-import-wizard kmail-account-wizard grantlee-editor akregator
+sudo pacman --noconfirm --needed -S cmake gcc5 bash-completion eigen cuda yasm ladspa hardening-wrapper libfdk-aac nvidia-utils opencl-nvidia libglvnd boost glfw-x11 glm enca libcaca python python-numpy gimp evince vlc networkmanager qt4 netbeans atom nfs-utils
+sudo pacman --noconfirm -R qt5-webengine akonadi-contacts akonadi-calendar calendarsupport akonadiconsole akonadi-calendar-tools eventviews incidenceeditor korganizer libkdepim kdepim-addons kdepim-runtime kgpg knotes kmail kalarm kaddressbook mailimporter pimcommon pim-data-exporter kdepim-apps-libs mailcommon pim-storage-service-manager mbox-importer messagelib libgravatar libksieve kontact pim-sieve-editor blogilo akonadi-import-wizard kmail-account-wizard grantlee-editor akregator
 
 # ----------------------------
 #     Manipulate Folders
