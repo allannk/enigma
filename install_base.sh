@@ -10,35 +10,9 @@ sudo pacman --noconfirm --needed -S python python-numpy netbeans qt4 atom nfs-ut
 sudo pacman --noconfirm --needed -S eigen cuda ladspa libfdk-aac glfw-x11 glm enca libcaca networkmanager libdc1394
 sudo pacman --noconfirm -R qt5-webengine akonadi-contacts akonadi-calendar calendarsupport akonadiconsole akonadi-calendar-tools eventviews incidenceeditor korganizer libkdepim kdepim-addons kdepim-runtime kgpg knotes kmail kalarm kaddressbook mailimporter pimcommon pim-data-exporter kdepim-apps-libs mailcommon pim-storage-service-manager mbox-importer messagelib libgravatar libksieve kontact pim-sieve-editor blogilo akonadi-import-wizard kmail-account-wizard grantlee-editor akregator
 
+python python2 python-numpy python2-numpy cmake bash-completion
 
 
-# ----------------------------
-#     Manipulate Folders
-# ----------------------------
-
-# Own folders we will be using!
-sudo chown $USER /srv -R
-sudo chmod a+rwx /tmp 
-
-# Create projects folder and mount folders
-mkdir -p /srv/projects
-sudo mkdir -p /mnt/hdd
-sudo mkdir -p /mnt/usb
-
-# Mount HDD and NFS drive
-sudo mkdir -p /mnt/data
-sudo mkdir -p /mnt/video
-if grep -e "192.168.0.6" /etc/fstab >/dev/null; then
-	echo -e "Dendron Mount Point already specified in /etc/fstab. If broken, remove these lines first!\n"
-	exit 1
-else
-	echo -e "Adding dendron NFS to '/etc/fstab' for automounting on boot ...\n"
-	echo -e "# Mount Dendron NFS" | sudo tee -a /etc/fstab >/dev/null
-	echo -e "192.168.0.6:/mnt/video /mnt/video nfs rw,rsize=8192,wsize=8192,timeo=14,_netdev,auto" | sudo tee -a /etc/fstab >/dev/null
-	echo -e "192.168.0.6:/mnt/data /mnt/data nfs rw,rsize=8192,wsize=8192,timeo=14,_netdev,auto" | sudo tee -a /etc/fstab >/dev/null	
-fi
-echo -e "Remounting all drives in /etc/fstab ..."
-sudo mount -a
 
 
 # ----------------------------
@@ -71,6 +45,7 @@ sudo pacman --noconfirm -R protobuf
 #    Clone Pipeline to Disk
 # ----------------------------
 if [ ! -d /srv/projects/egon ]; then
+	mkdir -p /srv/projects
 	git clone https://github.com/recoord/egon.git /srv/projects/egon
 	ln -s /srv/projects/egon $HOME/egon
 fi
