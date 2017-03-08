@@ -1,20 +1,20 @@
 #!/bin/sh
 
 # Basic System Packages
-echo -e "Installing basic tools >> \e[32mgit nfs-utils"
+echo -e "Installing basic tools >> \e[32mgit nfs-utils\e[39m"
 sudo pacman --noconfirm --needed -S git nfs-utils
 
 # Own folders we will be using!
-echo -e "Claiming folders >> \e[32m/srv /tmp"
+echo -e "Claiming folders >> \e[32m/srv /tmp\e[39m"
 sudo chown $USER /srv -R
 sudo chmod a+rwx /tmp 
 
 # Create projects folder and mount folders
-echo -e "Creating mountpoints >> \e[32m /mnt/ [hdd,usb,data,video]"
+echo -e "Creating mountpoints >> \e[32m /mnt/ [hdd,usb,data,video]\e[39m"
 sudo mkdir -p /mnt/hdd /mnt/usb /mnt/data /mnt/video
 
 # Mount HDD and NFS drive
-echo -e "Installing automount >> \e[32m /mnt/ [data,video]"
+echo -e "Installing automount >> \e[32m /mnt/ [data,video]\e[39m"
 if grep -e "192.168.0.6" /etc/fstab >/dev/null; then
 	echo -e "  > Dendron Mount Point already specified in /etc/fstab. If broken, remove these lines first!\n"
 else
