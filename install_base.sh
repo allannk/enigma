@@ -52,8 +52,8 @@ sudo pacman --noconfirm --needed -S ${pacman_packages[@]}
 # ----------------------------
 #    Clone Pipeline to Disk
 # ----------------------------
-if [ ! -d /srv/egon ]; then
-	git clone https://github.com/recoord/egon.git /srv/egon
-	ln -s /srv/egon $HOME/egon
-fi
+# if [ ! -d /srv/egon ]; then
+# 	git clone https://github.com/recoord/egon.git /srv/egon
+# 	ln -s /srv/egon $HOME/egon
+# fi
 
