@@ -1,8 +1,7 @@
 #!/bin/sh
 
-# ----------------------------
-#     Manipulate Folders
-# ----------------------------
+# Basic System Packages
+sudo pacman --noconfirm --needed -S cmake git wget bash-completion python python2 python-numpy python2-numpy nfs-utils
 
 # Own folders we will be using!
 sudo chown $USER /srv -R
@@ -28,12 +27,8 @@ fi
 echo -e "Remounting all drives in /etc/fstab ..."
 sudo mount -a
 
-
-# Basic System Packages
-sudo pacman --noconfirm --needed -S cmake git wget bash-completion python python2 python-numpy python2-numpy nfs-utils
-
 # Clone Enigma to /srv
-git clone https://github.com/allannk/enigma.git /srv
+git clone https://github.com/allannk/enigma.git /srv/enigma
 
 # Install GFX Drivers
 #sudo pacman --noconfirm --needed -U 
