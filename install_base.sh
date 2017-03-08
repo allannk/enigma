@@ -7,7 +7,9 @@ pkg_deps=(yasm glew ladspa libfdk-aac glfw-x11 glm enca libcaca libdc1394)
 pkg_util=(python python-numpy python2 python2-numpy screen)
 pkg_apps=(netbeans atom vlc gimp audacity evince)
 pkg_graphics=(nvidia nvidia-utils nvidia-libgl nvidia-settings opencl-nvidia libglvnd cuda)
-pacman_packages=(${pkg_base[@]} ${pkg_libs[@]} ${pkg_deps[@]} ${pkg_util[@]} ${pkg_apps[@]} ${pkg_graphics[@]})
+pacman_packages=(${pkg_base[@]} ${pkg_libs[@]} ${pkg_deps[@]} ${pkg_util[@]} ${pkg_apps[@]})
+
+#${pkg_graphics[@]}
 
 # Custom Packages
 custom_packages=yaourt-1.8.1-1-any.pkg.tar.xz package-query-1.8-2-x86_64.pkg.tar.xz
