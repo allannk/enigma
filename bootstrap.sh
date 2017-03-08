@@ -2,7 +2,7 @@
 
 # Basic System Packages
 echo -e "Installing basic tools >> \e[32mgit nfs-utils\e[39m"
-sudo pacman --noconfirm --needed -S git nfs-utils
+sudo pacman --noconfirm --needed -S git nfs-utils >/dev/null
 
 # Own folders we will be using!
 echo -e "Claiming folders >> \e[32m/srv /tmp\e[39m"
