@@ -27,8 +27,10 @@ else
 fi
 
 # Clone Enigma to /srv
-echo -e "Cloning \e[32mEnigma\e[39m to \e[32m/srv\e[39m for future maintainance"
-git clone https://github.com/allannk/enigma.git /srv/enigma
+if [ ! -d /srv/enigma ]; then
+	echo -e "Cloning \e[32mEnigma\e[39m to \e[32m/srv\e[39m for future maintainance"
+	git clone https://github.com/allannk/enigma.git /srv/enigma
+fi
 
 # Install GFX Drivers
 #sudo pacman --noconfirm --needed -U 
