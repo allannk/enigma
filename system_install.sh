@@ -2,24 +2,25 @@
 
 # Pacman Packages
 pkg_base=(cmake bash-completion)
-pkg_adm=(dmidecode)
-pkg_deps=(yasm glew ladspa libfdk-aac glfw-x11 glm enca libcaca libdc1394)
+pkg_adm=(dmidecode openssh)
+pkg_deps=(yasm glew ladspa libfdk-aac glfw-x11 glm enca libcaca libdc1394 rapidjson)
 pkg_util=(gcc5 hardening-wrapper boost boost-libs eigen python python-numpy python2 python2-numpy screen)
-pkg_apps=(netbeans vlc gimp audacity evince)
+pkg_apps=(netbeans vlc gimp audacity evince konsole)
 pkg_graphics=(cuda nvidia nvidia-utils nvidia-libgl nvidia-settings opencl-nvidia libglvnd mesa xf86-video-intel)
 pkg_desktop=(xorg-server xorg-xinit xorg-xrandr plasma-desktop sddm)
 pacman_packages=(${pkg_base[@]} ${pkg_adm[@]} ${pkg_deps[@]} ${pkg_util[@]} ${pkg_apps[@]} ${pkg_graphics[@]} ${pkg_desktop[@]})
 sudo pacman --noconfirm --needed -S ${pacman_packages[@]}
 
 # Custom Packages
-sudo pacman --noconfirm --needed -U package-query-1.8-2-x86_64.pkg.tar.xz 
-sudo pacman --noconfirm --needed -U yaourt-1.8.1-1-any.pkg.tar.xz 
-sudo pacman --noconfirm --needed -U ffmpeg-git-3.3.r83754.gef86488696-1-x86_64.pkg.tar.xz 
-sudo pacman --noconfirm --needed -U sciter-sdk-git-r131.976f452-1-any.pkg.tar.xz 
-sudo pacman --noconfirm --needed -U opencv-3.2.0-1-any.pkg.tar.xz 
-sudo pacman --noconfirm --needed -U tensorflow-r0.12-1-any.pkg.tar.xz 
-sudo pacman --noconfirm --needed -U rapidxml-1.13-1-any.pkg.tar.xz 
-sudo pacman --noconfirm --needed -U gitkraken-2.1.0-3-x86_64.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/package-query-1.8-2-x86_64.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/yaourt-1.8.1-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/ffmpeg-git-3.3.r83754.gef86488696-1-x86_64.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/sciter-sdk-git-r131.976f452-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/opencv-3.2.0-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/tensorflow-r0.12-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/rapidxml-1.13-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/gitkraken-2.1.0-3-x86_64.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U /usr/enigma/protobuf-11.0.0-1-any.pkg.tar.xz
 
 # AUR Packages
 aur_packages=(cudnn)
