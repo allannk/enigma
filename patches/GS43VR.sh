@@ -40,6 +40,7 @@ Section "Screen"
 EndSection
 EOL
 
-cat >/etc/X11/xorg.conf <<EOL
-
+cat >>/usr/share/sddm/scripts/Xsetup <<EOL
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
 EOL
