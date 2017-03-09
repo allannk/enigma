@@ -10,7 +10,7 @@ xrandr --auto
 exec startkde
 EOL
 
-cat >/etc/X11/xorg.conf <<EOL
+sudo cat >/etc/X11/xorg.conf <<EOL
 Section "ServerLayout"
   Identifier "layout"
   Screen 0 "nvidia"
@@ -40,7 +40,7 @@ Section "Screen"
 EndSection
 EOL
 
-cat >>/usr/share/sddm/scripts/Xsetup <<EOL
+sudo cat >>/usr/share/sddm/scripts/Xsetup <<EOL
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 EOL
