@@ -13,8 +13,8 @@ EOL
 sudo cat >/etc/X11/xorg.conf <<EOL
 Section "ServerLayout"
   Identifier "layout"
-  Screen 0 "nvidia"
-  Inactive "intel"
+  Screen 0   "nvidia"
+  Inactive   "intel"
 EndSection
 
 Section "Device"
@@ -25,8 +25,9 @@ EndSection
 
 Section "Screen"
   Identifier "nvidia"
-  Device "nvidia"
-  Option "AllowEmptyInitialConfiguration"
+  Device     "nvidia"
+  GPUDevice  "nvidia"
+  Option     "AllowEmptyInitialConfiguration"
 EndSection
 
 Section "Device"
