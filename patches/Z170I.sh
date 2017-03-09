@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "No patches to be applied "
+echo "No machine specific patches to be applied "
