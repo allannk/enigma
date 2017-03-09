@@ -7,8 +7,8 @@ pkg_deps=(yasm glew ladspa libfdk-aac glfw-x11 glm enca libcaca libdc1394)
 pkg_util=(gcc5 hardening-wrapper boost boost-libs eigen python python-numpy python2 python2-numpy screen)
 pkg_apps=(netbeans vlc gimp audacity evince)
 pkg_graphics=(cuda nvidia nvidia-utils nvidia-libgl nvidia-settings opencl-nvidia libglvnd mesa xf86-video-intel)
-pkg_desktop=(plasma-desktop sddm)
-pacman_packages=(${pkg_base[@]} ${pkg_adm[@]} ${pkg_deps[@]} ${pkg_util[@]} ${pkg_apps[@]} ${pkg_graphics[@]})
+pkg_desktop=(xorg-server xorg-xinit xorg-xrandr plasma-desktop sddm)
+pacman_packages=(${pkg_base[@]} ${pkg_adm[@]} ${pkg_deps[@]} ${pkg_util[@]} ${pkg_apps[@]} ${pkg_graphics[@]} ${pkg_desktop[@]})
 sudo pacman --noconfirm --needed -S ${pacman_packages[@]}
 
 # Custom Packages
@@ -25,6 +25,8 @@ sudo pacman --noconfirm --needed -U gitkraken-2.1.0-3-x86_64.pkg.tar.xz
 aur_packages=(cudnn)
 yaourt --noconfirm --needed -S ${aur_packages[@]}
 
+# Update Boot Settings
+sudo mkinitcpio -p linux
 
 # Apply patches to the system
 system=`sudo dmidecode | grep Product`
