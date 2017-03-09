@@ -9,24 +9,20 @@ pkg_apps=(netbeans vlc gimp audacity evince)
 pkg_graphics=(cuda nvidia nvidia-utils nvidia-libgl nvidia-settings opencl-nvidia libglvnd mesa xf86-video-intel)
 pkg_desktop=(plasma-desktop sddm)
 pacman_packages=(${pkg_base[@]} ${pkg_adm[@]} ${pkg_deps[@]} ${pkg_util[@]} ${pkg_apps[@]} ${pkg_graphics[@]})
+sudo pacman --noconfirm --needed -S ${pacman_packages[@]}
 
 # Custom Packages
-custom_packages=(package-query-1.8-2-x86_64.pkg.tar.xz)
-custom_packages+=yaourt-1.8.1-1-any.pkg.tar.xz 
-custom_packages+=ffmpeg-git-3.3.r83754.gef86488696-1-x86_64.pkg.tar.xz 
-custom_packages+=sciter-sdk-git-r131.976f452-1-any.pkg.tar.xz 
-custom_packages+=opencv-3.2.0-1-any.pkg.tar.xz 
-custom_packages+=tensorflow-r0.12-1-any.pkg.tar.xz 
-custom_packages+=rapidxml-1.13-1-any.pkg.tar.xz 
-custom_packages+=gitkraken-2.1.0-3-x86_64.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U package-query-1.8-2-x86_64.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U yaourt-1.8.1-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U ffmpeg-git-3.3.r83754.gef86488696-1-x86_64.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U sciter-sdk-git-r131.976f452-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U opencv-3.2.0-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U tensorflow-r0.12-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U rapidxml-1.13-1-any.pkg.tar.xz 
+sudo pacman --noconfirm --needed -U gitkraken-2.1.0-3-x86_64.pkg.tar.xz 
 
 # AUR Packages
 aur_packages=(cudnn)
-
-
-# Install all packages
-sudo pacman --noconfirm --needed -S ${pacman_packages[@]}
-sudo pacman --noconfirm --needed -U ${custom_packages[@]}
 yaourt --noconfirm --needed -S ${aur_packages[@]}
 
 
