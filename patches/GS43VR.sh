@@ -2,7 +2,7 @@
 
 # 1. Patch ~/.xinitrc to disable Intel GPU
 # 2. Patch XORG to disable Intel GPU and only use NVIDIA GPU
-
+# 3. Patch 
 
 cat >~/.xinitrc <<EOL
 xrandr --setprovideroutputsource modesetting NVIDIA-0
@@ -10,7 +10,6 @@ xrandr --auto
 exec startkde
 EOL
 
-# /etc/X11/xorg.conf
 cat >/etc/X11/xorg.conf <<EOL
 Section "ServerLayout"
   Identifier "layout"
@@ -39,4 +38,8 @@ Section "Screen"
   Identifier "intel"
   Device     "intel"
 EndSection
+EOL
+
+cat >/etc/X11/xorg.conf <<EOL
+
 EOL

@@ -30,6 +30,7 @@ fi
 if [ ! -d /srv/enigma ]; then
 	echo -e "Cloning \e[32mEnigma\e[39m to \e[32m/srv\e[39m for future maintainance"
 	git clone https://github.com/allannk/enigma.git /srv/enigma
+	echo -e "Bootstrapping done. Continue installation by running 'sh /srv/enigma/system_install.sh'"
 fi
 
 # Install GFX Drivers
